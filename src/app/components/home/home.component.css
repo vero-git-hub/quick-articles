@@ -10,3 +10,9 @@
   flex: 1 1 calc(33% - 32px);
   box-sizing: border-box;
 }
+
+.card-image {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: cover; /* Scale an image while maintaining aspect ratio */
+}

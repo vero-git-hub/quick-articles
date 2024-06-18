@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
@@ -8,6 +8,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardImage } from "@angular/material/card";
 import { MatButton } from "@angular/material/button";
 import { RouterModule } from '@angular/router';
+import { ArticleService } from '../../services/article.service';
+import { catchError, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -29,18 +32,28 @@ import { RouterModule } from '@angular/router';
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
   title = 'quick-articles';
+  articles: any[] = [];
+  numberOfArticles = 0;
 
-  articles = [
-    { id: 1, date: 'May 28th, 2021', title: 'Healthcare updates', content: 'Non sed IT companies tortor massa vitae in mattis. Eget vel consequat hendrerit commodo libero aliquam. Urna arcu nunc tortor vitae pharetra...', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-    { id: 2, date: 'June 5th, 2021', title: 'Tech trends', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-    { id: 3, date: 'July 12th, 2021', title: 'Market analysis', content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-    { id: 4, date: 'August 19th, 2021', title: 'Financial news', content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg' },
-    { id: 5, date: 'September 25th, 2021', title: 'New policies', content: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum...', image: 'https://material.angular.io/assets/img/examples/shiba2.jpg' }
-  ];
+  constructor(private articleService: ArticleService) {}
 
-  numberOfArticles = this.articles.length;
+  ngOnInit(): void {
+    // console.log('ngOnInit called');
+    this.articleService.getArticles().pipe(
+      tap(data => {
+        // console.log('Articles fetched:', data);
+        this.articles = data;
+        this.numberOfArticles = data.length;
+        // console.log('Articles set:', this.articles);
+      }),
+      catchError(error => {
+        console.error('Error fetching articles:', error);
+        return of([]);
+      })
+    ).subscribe();
+  }
 }
