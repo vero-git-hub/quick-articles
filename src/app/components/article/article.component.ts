@@ -25,7 +25,7 @@ import { of } from 'rxjs';
   styleUrls: ['./article.component.css']
 })
 export class ArticleComponent implements OnInit {
-  article: any;
+  article: any = null;
 
   constructor(private route: ActivatedRoute, private articleService: ArticleService) { }
 
