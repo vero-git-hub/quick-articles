@@ -22,7 +22,7 @@ import { of } from 'rxjs';
     RouterModule
   ],
   templateUrl: './article.component.html',
-  styleUrls: ['./article.component.css']
+  styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
   article: any = null;

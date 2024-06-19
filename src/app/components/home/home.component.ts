@@ -34,7 +34,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
     FormsModule,
   ],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class HomeComponent implements OnInit {

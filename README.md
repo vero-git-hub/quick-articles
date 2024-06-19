@@ -1,27 +1,91 @@
-# QuickArticles
+# Quick Articles
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+## Overview
 
-## Development server
+Quick Articles is a Single Page Application (SPA) built with Angular, designed to fetch and display articles from the Spaceflight News API. The application features a homepage with article cards, a search functionality to filter articles by keywords, and individual article pages for detailed views.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **Homepage**: Displays a list of articles with titles, summaries, and publish dates.
+- **Search**: Filters articles by keywords in the title or summary.
+- **Article Page**: Shows detailed view of the selected article.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- **Angular (v18.0.4)**: Framework for building the SPA.
+- **Angular Material**: UI component library for styling and responsive design.
+- **RxJS**: Reactive Extensions for asynchronous operations.
+- **Spaceflight News API**: Source of article data.
+- **npm (v10.8.1)**: Package manager for Node.js.
+- **Node.js (v20.14.0)**: JavaScript runtime environment.
+- **Sass**: CSS preprocessor for styling.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/vero-git-hub/quick-articles.git
+    cd quick-articles
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-## Running end-to-end tests
+3. **Run the application**:
+    ```bash
+    ng serve
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Open your browser and navigate to `http://localhost:4200`.
 
-## Further help
+## Usage
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Home Page
+
+- Displays article cards with a summary truncated to 100 characters.
+- Each card has a "Read more" button leading to the article page.
+
+### Search
+
+- Located at the top of the homepage.
+- Filters articles based on keywords entered in the search input.
+- Highlights matching keywords in the title and summary.
+- Priority in search is given to the title.
+
+### Article Page
+
+- Displays the full article with an image, title, and full summary.
+- The "Read full article" link opens the full article on the website.
+- The "Back to homepage" link returns to the homepage.
+
+## Code Structure
+
+- **app.component.ts**: Main component loading the application.
+- **home.component.ts**: Component for the homepage, including search functionality.
+- **article.component.ts**: Component for displaying individual articles.
+- **article.service.ts**: Service for fetching articles from the API.
+- **styles.css**: Global styles including custom theme.
+
+## Known Issues
+
+- Initial loading of articles may have a delay due to API fetch.
+- Ensure the API version is up-to-date (currently using v4).
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to reach out if you have any questions or need further assistance!
+```

@@ -44,19 +44,21 @@
   height: 50px;
   display: flex;
   align-items: center;
-}
-.custom-form-field .mat-icon {
-  font-size: 24px !important;
-  color: #575757 !important;
-  padding: 15px 20px;
-}
-.custom-form-field input {
-  height: 100%;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  line-height: normal;
+
+  .mat-icon {
+    font-size: 24px !important;
+    color: #575757 !important;
+    padding: 15px 20px;
+  }
+
+  input {
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    line-height: normal;
+  }
 }
 
 /* Calendar icon */
@@ -97,5 +99,3 @@
 .spacer {
   flex-grow: 1;
 }
-
-/*# sourceMappingURL=home.component.css.map */
