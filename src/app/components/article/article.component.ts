@@ -33,7 +33,6 @@ export class ArticleComponent implements OnInit {
     const articleId = +this.route.snapshot.paramMap.get('id')!;
     this.articleService.getArticleById(articleId).pipe(
       tap(data => {
-        // console.log('Article fetched:', data);
         this.article = data;
       }),
       catchError(error => {
