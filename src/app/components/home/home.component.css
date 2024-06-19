@@ -6,22 +6,23 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 16px;
+  gap: 45px;
   margin-top: 45px;
 }
 
 .example-card {
-  flex: 1 1 calc(33% - 32px);
   box-sizing: border-box;
+  width: 400px !important;
+  height: 530px;
 }
 
 .card-image {
-  max-width: 100%;
-  max-height: 200px;
+  max-width: 400px;
+  max-height: 217px;
   object-fit: cover; /* Scale an image while maintaining aspect ratio */
 }
 
-.home-title {
+.home-title, .read-more {
   font-weight: bold;
 }
 
@@ -39,4 +40,48 @@
 .custom-form-field {
   width: 600px;
   height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-form-field input {
+  height: 100%;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  line-height: normal;
+}
+
+/* Calendar icon */
+.mat-icon.mat-icon-no-color {
+  font-size: 16px !important;
+  height: 16px;
+  width: 16px;
+  line-height: 16px;
+  margin-right: 8px;
+}
+
+/* Date */
+.mat-mdc-card-subtitle{
+  font-size: 14px;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  align-items: center;
+  display: flex;
+}
+
+/* Date & title */
+.mat-mdc-card-header {
+  display: flex;
+  padding: 25px 16px 20px 16px;
+}
+
+.mat-mdc-card-title {
+  font-size: 24px;
+}
+
+.mat-mdc-card-content {
+  font-size: 16px;
+  line-height: 150%;
 }
