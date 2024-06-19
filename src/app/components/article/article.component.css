@@ -16,7 +16,7 @@
   background-color: white;
   width: 90%;
   max-width: 1290px;
-  padding: 50px 75px;
+
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-top: -100px;
   z-index: 1;
@@ -25,23 +25,36 @@
   border: 1px solid #EAEAEA;
 }
 
-.article-header .mat-card-title{
+.article-header{
   display: flex;
   justify-content: center;
-  font-size: 24px !important;
-  color: #363636 !important;
+  font-size: 24px;
+  color: #363636;
+  padding: 50px 75px 0 75px;
 }
 
 .article-text {
   font-size: 18px;
   color: #000000;
   margin: 0;
+  padding: 50px 75px;
+}
+
+.read-full {
+  padding: 0 75px 50px 75px;
+}
+
+.back-link-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  max-width: 1290px;
+  margin: 35px 0 0 150px;
 }
 
 .back-link {
-  display: block;
-  margin-top: 16px;
-  text-align: center;
+  display: flex;
+  align-items: center;
   color: #363636 !important;
   text-decoration: none;
   font-size: 16px;
